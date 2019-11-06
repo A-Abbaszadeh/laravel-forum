@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace LaravelForum;
 
 class Discussion extends Model
 {

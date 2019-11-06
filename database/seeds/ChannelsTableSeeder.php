@@ -1,6 +1,6 @@
 <?php
 
-use App\Channel;
+use LaravelForum\Channel;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
