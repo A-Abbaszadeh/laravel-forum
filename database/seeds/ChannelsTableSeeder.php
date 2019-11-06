@@ -13,21 +13,21 @@ class ChannelsTableSeeder extends Seeder
      */
     public function run()
     {
-        Channel::created([
+        Channel::insert([
             [
-                'title' => 'Laravel 5.8',
+                'name' => 'Laravel 5.8',
                 'slug' => Str::slug('Laravel 5.8')
             ],
             [
-                'title' => 'Vue Js',
+                'name' => 'Vue Js',
                 'slug' => Str::slug('Vue Js')
             ],
             [
-                'title' => 'Angular 7',
+                'name' => 'Angular 7',
                 'slug' => Str::slug('Angular 7')
             ],
             [
-                'title' => 'Node JS',
+                'name' => 'Node JS',
                 'slug' => Str::slug('Node JS')
             ],
         ]);
