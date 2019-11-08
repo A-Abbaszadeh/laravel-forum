@@ -86,6 +86,30 @@
                         </ul>
                     </div>
                     <div class="col-md-8">
+                        @if(session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p class="mb-0 my-1">
+                                    {{ session('success') }}
+                                </p>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+
+                        @if($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong class="mb-0">Pay attention!</strong>
+                                @foreach($errors->all() as $error)
+                                    <p class="mb-0 my-1">
+                                        {{ $error }}
+                                    </p>
+                                @endforeach
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                         @yield('content')
                     </div>
                 </div>

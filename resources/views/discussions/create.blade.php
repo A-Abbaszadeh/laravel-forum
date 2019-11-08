@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="channels">Channels:</label>
-                    <select name="channels" id="channels" class="form-control custom-select">
+                    <label for="channel">Channels:</label>
+                    <select name="channel" id="channels" class="form-control custom-select">
                         @foreach($channels as $channel)
                             <option value="{{ $channel->id }}">{{ $channel->name }}</option>
                         @endforeach
@@ -27,9 +27,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="content">Content:</label>
-                    <input id="content" type="hidden" name="content" value="{{ old('content') }}">
-                    <trix-editor input="content"></trix-editor>
+                    <label for="discussion_content">Content:</label>
+                    <input id="discussion_content" type="hidden" name="discussion_content" value="{{ old('discussion_content') }}">
+                    <trix-editor input="discussion_content"></trix-editor>
 
                 </div>
 

@@ -3,9 +3,17 @@
 namespace LaravelForum\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use LaravelForum\Discussion;
+use LaravelForum\Http\Requests\CreateDiscussionRequest;
 
 class DiscussionsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['create', 'store']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,9 @@ class DiscussionsController extends Controller
      */
     public function index()
     {
-        //
+        return view('discussions.index',[
+           'discussions' => Discussion::paginate(3)
+        ]);
     }
 
     /**
@@ -32,9 +42,18 @@ class DiscussionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateDiscussionRequest $request)
     {
-        //
+        auth()->user()->discussions()->create([
+            'title' => $request->title,
+            'content' => $request->discussion_content,
+            'slug' => Str::slug($request->title),
+            'channel_id' => $request->channel
+        ]);
+
+        session()->flash('success', "'{$request->title}' is created successfully");
+
+        return redirect(route('discussions.index'));
     }
 
     /**
