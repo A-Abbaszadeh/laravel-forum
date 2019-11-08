@@ -28,7 +28,9 @@
 
                 <div class="form-group">
                     <label for="content">Content:</label>
-                    <textarea name="content" id="content" cols="30" rows="10" class="form-control" placeholder="Enter Content">{{ old('content') }}</textarea>
+                    <input id="content" type="hidden" name="content" value="{{ old('content') }}">
+                    <trix-editor input="content"></trix-editor>
+
                 </div>
 
                 <div class="form-group">
@@ -37,4 +39,12 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.css" integrity="sha256-vu9SAWhYz3+PNEdy/FtYE0QBaAS2e/cB7OcSWV28WcM=" crossorigin="anonymous" />
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.js" integrity="sha256-ZnHiEOG1mQVIQHeVGc+lHPvZjtCC8cWqNI7W1GpkN3I=" crossorigin="anonymous"></script>
 @endsection
