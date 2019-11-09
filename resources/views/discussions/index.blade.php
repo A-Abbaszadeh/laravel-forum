@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card mb-3">
+{{--    <div class="card mb-3">
         <div class="card-header">
             <div class="navbar-brand">
                 Discussions
@@ -10,10 +10,10 @@
                 library_add
             </a>
         </div>
-    </div>
+    </div>--}}
 
     @foreach($discussions as $discussion)
-        <div class="card mb-3">
+        <div class="card my-3">
             <div class="card-header">
                 <div class="navbar-brand">
                     {{ $discussion->title }}
@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="card-body">
-                {!! \Illuminate\Support\Str::limit($discussion->content,500,' ...') !!}
+                {!! $discussion->content !!}
             </div>
         </div>
     @endforeach

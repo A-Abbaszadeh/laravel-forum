@@ -4,11 +4,8 @@
 <div class="card">
         <div class="card-header">
             <div class="navbar-brand">
-                Discussions
+                Home
             </div>
-            <a href="{{ route('discussions.create') }}" class="material-icons btn btn-primary float-right" style="font-size:20px" title="Add Discussion">
-                library_add
-            </a>
         </div>
 
         <div class="card-body">
