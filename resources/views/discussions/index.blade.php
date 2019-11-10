@@ -14,16 +14,11 @@
 
     @foreach($discussions as $discussion)
         <div class="card my-3">
-            <div class="card-header">
-                <div class="navbar-brand">
-                    {{ $discussion->title }}
-                </div>
-                <a href="#" class="material-icons btn btn-primary float-right" style="font-size:20px" title="Edit Discussion">
-                    edit
-                </a>
-            </div>
+
+            @include('partials.discussion-header')
+
             <div class="card-body">
-                {!! $discussion->content !!}
+                {{ $discussion->title }}
             </div>
         </div>
     @endforeach
