@@ -73,15 +73,26 @@
             </div>
         </nav>
 
-        @auth()
+        @if(in_array(request()->path(),['login', 'register', 'password/reset', 'password/email']))
+            <main class="py-4">
+                @yield('content')
+            </main>
+        @else
             <main class="container py-4">
                 <div class="row">
                     <div class="col-md-4">
 
-                        <a href="{{ route('discussions.create') }}" class="btn btn-primary my-2" style="font-size:20px; width: 100%" title="Add Discussion">
-                            Add Discussion
-                        </a>
+                        @auth()
+                            <a href="{{ route('discussions.create') }}" class="btn btn-primary my-2" style="font-size:20px; width: 100%" title="Add Discussion">
+                                Add Discussion
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}" class="btn btn-primary my-2" style="font-size:20px; width: 100%" title="Sign in">
+                                Sign in to add discussion
+                            </a>
+                        @endauth
 
+                        {{-- Channels list --}}
                         <div class="card">
                             <div class="card-header">
                                 <div class="navbar-brand">
@@ -131,11 +142,8 @@
                     </div>
                 </div>
             </main>
-        @else
-            <main class="py-4">
-                @yield('content')
-            </main>
-        @endauth
+        @endif
+
     </div>
 
     <!-- Scripts -->
