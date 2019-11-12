@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use LaravelForum\Discussion;
 use LaravelForum\Http\Requests\CreateDiscussionRequest;
+use LaravelForum\Reply;
 
 class DiscussionsController extends Controller
 {
@@ -101,5 +102,21 @@ class DiscussionsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * The reply marked as best reply.
+     *
+     * @param  \LaravelForum\Discussion $discussion
+     * @param  \LaravelForum\Reply $reply
+     * @return \Illuminate\Http\Response
+     */
+    public function bestReply(Discussion $discussion, Reply $reply)
+    {
+        $discussion->markAsBestReply($reply);
+
+        session()->flash('success', "'{$discussion->title}' was marked as the best reply.");
+
+        return redirect()->back();
     }
 }

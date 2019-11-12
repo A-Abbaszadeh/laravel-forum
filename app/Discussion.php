@@ -18,4 +18,16 @@ class Discussion extends Model
     {
         return $this->hasMany(Reply::class);
     }
+
+    public function bestReply()
+    {
+        return $this->belongsTo(Reply::class,'best_reply_id');
+    }
+
+    public function markAsBestReply(Reply $reply)
+    {
+        $this->update([
+            'best_reply_id' => $reply->id
+        ]);
+    }
 }

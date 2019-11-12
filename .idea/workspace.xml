@@ -5,9 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8da83c90-5e6d-44da-b631-6eac5c9802e2.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8da83c90-5e6d-44da-b631-6eac5c9802e2.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Discussion.php" afterPath="$PROJECT_DIR$/app/Discussion.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php" />
       <change beforePath="$PROJECT_DIR$/resources/views/discussions/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/discussions/show.blade.php" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,6 +45,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="laravel_forum: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="laravel_forum@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="laravel_forum: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="discussions: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -52,82 +60,84 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/discussions/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="43" column="61" lean-forward="true" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="69" />
               <folding>
-                <element signature="e#0#3153#0#Blade" expanded="false" />
-                <element signature="e#0#3153#0#Blade" expanded="false" />
-                <marker date="1573584282533" expanded="true" signature="9:22" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="34:43" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="86:114" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="187:207" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="302:324" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="446:504" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="446:3153" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="542:606" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="788:825" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="978:999" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="1206:1223" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="1321:1341" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="1421:1467" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="1644:1687" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="1884:1906" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="2232:2248" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="2391:2396" ph="..." />
-                <marker date="1573584282533" expanded="true" signature="2959:2963" ph="..." />
+                <element signature="e#0#4752#0#Blade" expanded="false" />
+                <element signature="e#0#4752#0#Blade" expanded="false" />
+                <marker date="1573595151045" expanded="true" signature="9:22" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="34:43" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="86:114" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="187:207" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="302:324" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="363:385" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="632:685" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="844:881" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1329:1362" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1563:1639" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1563:4752" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1674:1675" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1675:1693" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="1873:1910" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2063:2084" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2217:2257" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2217:2259" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2309:2403" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2805:2822" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="2920:2940" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="3020:3066" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="3243:3286" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="3483:3505" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="3831:3847" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="3990:3995" ph="..." />
+                <marker date="1573595151045" expanded="true" signature="4558:4562" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/discussions/index.blade.php">
+      <file leaf-file-name="2019_11_06_183734_create_discussions_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding>
-                <element signature="e#45#425#0#Blade" expanded="false" />
-                <marker date="1573420744193" expanded="true" signature="9:22" ph="..." />
-                <marker date="1573420744193" expanded="true" signature="34:43" ph="..." />
-                <marker date="1573420744193" expanded="true" signature="440:467" ph="..." />
-                <marker date="1573420744193" expanded="true" signature="523:551" ph="..." />
-                <marker date="1573420744193" expanded="true" signature="608:628" ph="..." />
-                <marker date="1573420744193" expanded="true" signature="688:711" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reply.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Reply.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="540">
+              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepliesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RepliesController.php">
+      <file leaf-file-name="DiscussionsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="531">
+              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
               <folding>
                 <element signature="e#49#77#0#PHP" expanded="true" />
-                <element signature="e#208#309#0#PHP" expanded="false" />
-                <element signature="e#314#360#0#PHP" expanded="false" />
-                <element signature="e#480#527#0#PHP" expanded="false" />
-                <element signature="e#533#692#0#PHP" expanded="false" />
-                <element signature="e#1059#1181#0#PHP" expanded="false" />
-                <element signature="e#1186#1234#0#PHP" expanded="false" />
-                <element signature="e#1240#1380#0#PHP" expanded="false" />
-                <element signature="e#1385#1433#0#PHP" expanded="false" />
-                <element signature="e#1439#1621#0#PHP" expanded="false" />
-                <element signature="e#1626#1694#0#PHP" expanded="false" />
-                <element signature="e#1700#1834#0#PHP" expanded="false" />
-                <element signature="e#1839#1890#0#PHP" expanded="false" />
+                <element signature="e#378#479#0#PHP" expanded="false" />
+                <element signature="e#631#740#0#PHP" expanded="false" />
+                <element signature="e#745#824#0#PHP" expanded="false" />
+                <element signature="e#830#989#0#PHP" expanded="false" />
+                <element signature="e#1457#1579#0#PHP" expanded="false" />
+                <element signature="e#1584#1732#0#PHP" expanded="false" />
+                <element signature="e#1738#1878#0#PHP" expanded="false" />
+                <element signature="e#1883#1931#0#PHP" expanded="false" />
+                <element signature="e#1937#2119#0#PHP" expanded="false" />
+                <element signature="e#2124#2192#0#PHP" expanded="false" />
+                <element signature="e#2198#2332#0#PHP" expanded="false" />
+                <element signature="e#2337#2388#0#PHP" expanded="false" />
+                <element signature="e#2394#2586#0#PHP" expanded="false" />
+                <element signature="e#2591#2842#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,28 +145,8 @@
       <file leaf-file-name="Discussion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Discussion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateReplyRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateReplyRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state relative-caret-position="600">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,14 +173,12 @@
         <option value="$PROJECT_DIR$/app/Channel.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_06_185116_create_channels_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/ChannelsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateDiscussionRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/discussions/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php" />
         <option value="$PROJECT_DIR$/resources/views/discussions/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/discussion-header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
@@ -198,12 +186,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_11_12_171206_create_replies_table.php" />
         <option value="$PROJECT_DIR$/app/Reply.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateReplyRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Discussion.php" />
         <option value="$PROJECT_DIR$/resources/views/discussions/show.blade.php" />
       </list>
@@ -391,7 +381,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.CVS" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/index.blade.php&#10;Discussion&#9;null&#9;null&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/create.blade.php&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_12_171206_create_replies_table.php&#10;Controller&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;RepliesC&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/RepliesController.php&#10;CreateR&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/User.php&#10;Repl&#9;null&#9;null&#10;create_r&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_12_171206_create_replies_table.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/routes/web.php&#10;redi&#9;null&#9;null&#10;au&#9;null&#9;null&#10;regis&#9;null&#9;null&#10;loginC&#9;null&#9;null&#10;DiscussionC&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;Dis&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Discussion.php&#10;Discu&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Discussion.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/layouts/app.blade.php&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/create.blade.php&#10;contr&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;createDiscussionre&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Requests/CreateDiscussionRequest.php&#10;DiscussionsController&#9;null&#9;null&#10;home.bl&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/home.blade.php&#10;app.bl&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/layouts/app.blade.php&#10;chan&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_06_185116_create_channels_table.php&#10;Chan&#9;null&#9;null&#10;workspace.xml&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/.idea/workspace.xml&#10;workspace&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/.idea/workspace.xml" />
+    <property name="SearchEverywhereHistoryKey" value="web.&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/routes/web.php&#10;disc&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;create_&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_06_183734_create_discussions_table.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/index.blade.php&#10;Discussion&#9;null&#9;null&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/create.blade.php&#10;cre&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_12_171206_create_replies_table.php&#10;Controller&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;RepliesC&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/RepliesController.php&#10;CreateR&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/User.php&#10;Repl&#9;null&#9;null&#10;create_r&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_12_171206_create_replies_table.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/routes/web.php&#10;redi&#9;null&#9;null&#10;au&#9;null&#9;null&#10;regis&#9;null&#9;null&#10;loginC&#9;null&#9;null&#10;DiscussionC&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;Dis&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Discussion.php&#10;Discu&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Discussion.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/layouts/app.blade.php&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/discussions/create.blade.php&#10;contr&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Controllers/DiscussionsController.php&#10;createDiscussionre&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/app/Http/Requests/CreateDiscussionRequest.php&#10;DiscussionsController&#9;null&#9;null&#10;home.bl&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/home.blade.php&#10;app.bl&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/resources/views/layouts/app.blade.php&#10;chan&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/database/migrations/2019_11_06_185116_create_channels_table.php&#10;Chan&#9;null&#9;null&#10;workspace.xml&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/.idea/workspace.xml&#10;workspace&#9;FILE&#9;file://C:/xampp/htdocs/Github/laravel-forum/.idea/workspace.xml" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RunDashboard">
@@ -425,12 +415,12 @@
       <workItem from="1573328415266" duration="4497000" />
       <workItem from="1573416780368" duration="4560000" />
       <workItem from="1573496973927" duration="4919000" />
-      <workItem from="1573578339476" duration="5811000" />
+      <workItem from="1573578339476" duration="12088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43397000" />
+    <option name="totallyTimeSpent" value="49674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -440,7 +430,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15989584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15989584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -489,26 +479,34 @@
         <state relative-caret-position="570">
           <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
-            <element signature="e#0#3153#0#Blade" expanded="false" />
-            <element signature="e#0#3153#0#Blade" expanded="false" />
-            <marker date="1573584282533" expanded="true" signature="9:22" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="34:43" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="86:114" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="187:207" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="302:324" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="446:504" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="446:3153" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="542:606" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="788:825" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="978:999" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1206:1223" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1321:1341" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1421:1467" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1644:1687" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1884:1906" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2232:2248" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2391:2396" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2959:2963" ph="..." />
+            <element signature="e#0#4752#0#Blade" expanded="false" />
+            <element signature="e#0#4752#0#Blade" expanded="false" />
+            <marker date="1573595151045" expanded="true" signature="9:22" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="34:43" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="86:114" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="187:207" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="302:324" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="363:385" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="632:685" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="844:881" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1329:1362" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1563:1639" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1563:4752" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1674:1675" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1675:1693" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1873:1910" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2063:2084" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2217:2257" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2217:2259" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2309:2403" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2805:2822" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2920:2940" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3020:3066" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3243:3286" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3483:3505" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3831:3847" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3990:3995" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="4558:4562" ph="..." />
           </folding>
         </state>
       </provider>
@@ -533,15 +531,15 @@
         <state relative-caret-position="1530">
           <caret line="68" column="11" lean-forward="true" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
           <folding>
-            <element signature="e#354#455#0#PHP" expanded="false" />
-            <element signature="e#806#965#0#PHP" expanded="false" />
-            <element signature="e#1433#1555#0#PHP" expanded="false" />
-            <element signature="e#1714#1854#0#PHP" expanded="false" />
-            <element signature="e#1859#1907#0#PHP" expanded="false" />
-            <element signature="e#1913#2095#0#PHP" expanded="false" />
-            <element signature="e#2100#2168#0#PHP" expanded="false" />
-            <element signature="e#2174#2308#0#PHP" expanded="false" />
-            <element signature="e#2313#2364#0#PHP" expanded="false" />
+            <element signature="e#378#479#0#PHP" expanded="false" />
+            <element signature="e#830#989#0#PHP" expanded="false" />
+            <element signature="e#1457#1579#0#PHP" expanded="false" />
+            <element signature="e#1738#1878#0#PHP" expanded="false" />
+            <element signature="e#1883#1931#0#PHP" expanded="false" />
+            <element signature="e#1937#2119#0#PHP" expanded="false" />
+            <element signature="e#2124#2192#0#PHP" expanded="false" />
+            <element signature="e#2198#2332#0#PHP" expanded="false" />
+            <element signature="e#2337#2388#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -596,15 +594,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#354#455#0#PHP" expanded="false" />
-            <element signature="e#806#965#0#PHP" expanded="false" />
-            <element signature="e#1433#1555#0#PHP" expanded="false" />
-            <element signature="e#1714#1854#0#PHP" expanded="false" />
-            <element signature="e#1859#1907#0#PHP" expanded="false" />
-            <element signature="e#1913#2095#0#PHP" expanded="false" />
-            <element signature="e#2100#2168#0#PHP" expanded="false" />
-            <element signature="e#2174#2308#0#PHP" expanded="false" />
-            <element signature="e#2313#2364#0#PHP" expanded="false" />
+            <element signature="e#378#479#0#PHP" expanded="false" />
+            <element signature="e#830#989#0#PHP" expanded="false" />
+            <element signature="e#1457#1579#0#PHP" expanded="false" />
+            <element signature="e#1738#1878#0#PHP" expanded="false" />
+            <element signature="e#1883#1931#0#PHP" expanded="false" />
+            <element signature="e#1937#2119#0#PHP" expanded="false" />
+            <element signature="e#2124#2192#0#PHP" expanded="false" />
+            <element signature="e#2198#2332#0#PHP" expanded="false" />
+            <element signature="e#2337#2388#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ChannelsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -728,13 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3e00e5ec/8da83c90-5e6d-44da-b631-6eac5c9802e2/laravel_forum.discussions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -801,13 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="73" lean-forward="false" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -821,24 +798,6 @@
         <state relative-caret-position="517">
           <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="68" column="11" lean-forward="false" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-          <folding>
-            <element signature="e#354#455#0#PHP" expanded="false" />
-            <element signature="e#806#965#0#PHP" expanded="false" />
-            <element signature="e#1433#1555#0#PHP" expanded="false" />
-            <element signature="e#1714#1854#0#PHP" expanded="false" />
-            <element signature="e#1859#1907#0#PHP" expanded="false" />
-            <element signature="e#1913#2095#0#PHP" expanded="false" />
-            <element signature="e#2100#2168#0#PHP" expanded="false" />
-            <element signature="e#2174#2308#0#PHP" expanded="false" />
-            <element signature="e#2313#2364#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,12 +850,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Reply.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RepliesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
-            <element signature="e#49#77#0#PHP" expanded="true" />
+            <element signature="e#49#77#0#PHP" expanded="false" />
             <element signature="e#208#309#0#PHP" expanded="false" />
             <element signature="e#314#360#0#PHP" expanded="false" />
             <element signature="e#480#527#0#PHP" expanded="false" />
@@ -910,22 +877,6 @@
             <element signature="e#1700#1834#0#PHP" expanded="false" />
             <element signature="e#1839#1890#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Discussion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Reply.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,31 +896,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_06_183734_create_discussions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Discussion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/3e00e5ec/8da83c90-5e6d-44da-b631-6eac5c9802e2/laravel_forum.discussions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DiscussionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding>
+            <element signature="e#49#77#0#PHP" expanded="true" />
+            <element signature="e#378#479#0#PHP" expanded="false" />
+            <element signature="e#631#740#0#PHP" expanded="false" />
+            <element signature="e#745#824#0#PHP" expanded="false" />
+            <element signature="e#830#989#0#PHP" expanded="false" />
+            <element signature="e#1457#1579#0#PHP" expanded="false" />
+            <element signature="e#1584#1732#0#PHP" expanded="false" />
+            <element signature="e#1738#1878#0#PHP" expanded="false" />
+            <element signature="e#1883#1931#0#PHP" expanded="false" />
+            <element signature="e#1937#2119#0#PHP" expanded="false" />
+            <element signature="e#2124#2192#0#PHP" expanded="false" />
+            <element signature="e#2198#2332#0#PHP" expanded="false" />
+            <element signature="e#2337#2388#0#PHP" expanded="false" />
+            <element signature="e#2394#2586#0#PHP" expanded="false" />
+            <element signature="e#2591#2842#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/discussions/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state relative-caret-position="300">
+          <caret line="43" column="61" lean-forward="true" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="69" />
           <folding>
-            <element signature="e#0#3153#0#Blade" expanded="false" />
-            <element signature="e#0#3153#0#Blade" expanded="false" />
-            <marker date="1573584282533" expanded="true" signature="9:22" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="34:43" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="86:114" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="187:207" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="302:324" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="446:504" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="446:3153" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="542:606" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="788:825" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="978:999" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1206:1223" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1321:1341" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1421:1467" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1644:1687" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="1884:1906" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2232:2248" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2391:2396" ph="..." />
-            <marker date="1573584282533" expanded="true" signature="2959:2963" ph="..." />
+            <element signature="e#0#4752#0#Blade" expanded="false" />
+            <element signature="e#0#4752#0#Blade" expanded="false" />
+            <marker date="1573595151045" expanded="true" signature="9:22" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="34:43" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="86:114" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="187:207" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="302:324" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="363:385" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="632:685" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="844:881" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1329:1362" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1563:1639" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1563:4752" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1674:1675" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1675:1693" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="1873:1910" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2063:2084" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2217:2257" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2217:2259" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2309:2403" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2805:2822" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="2920:2940" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3020:3066" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3243:3286" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3483:3505" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3831:3847" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="3990:3995" ph="..." />
+            <marker date="1573595151045" expanded="true" signature="4558:4562" ph="..." />
           </folding>
         </state>
       </provider>

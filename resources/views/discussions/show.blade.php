@@ -11,13 +11,38 @@
             <div class="my-4">
                 {!! $discussion->content !!}
             </div>
+            @if($discussion->bestReply)
+               <div class="card text-white bg-success">
+                   <div class="card-header">
+                       <div class="d-flex justify-content-between">
+                           <div>
+                               <img src="{{ Gravatar::src($discussion->bestReply->owner->email) }}" alt="avatar" width="40px" class="rounded-circle">
+                               <span class="ml-2 font-weight-bold">
+                                   {{ $discussion->bestReply->owner->name }}
+                               </span>
+                           </div>
+                           <div>
+                               <strong>
+                                   Best Reply
+                               </strong>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="card-body">
+                       <span class="card-text">
+                           {!! $discussion->bestReply->content !!}
+                       </span>
+                   </div>
+               </div>
+            @endif
         </div>
     </div>
 
     {{-- Show replies --}}
     <div class="container">
-        @foreach($discussion->replies()->paginate(3) as $indexKey => $reply)
-            <div class="card my-4 {{ $indexKey%2 ? "text-white bg-secondary" : "text-white bg-dark" }}">
+        @foreach($discussion->replies()->orderBy('created_at', 'desc')->paginate(3) as $reply)
+            <div class="card my-4 text-white bg-dark">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -26,7 +51,17 @@
                                 {{ $reply->owner->name }}
                             </span>
                         </div>
+
+                        <div>
+                            @if(auth()->user()->id == $discussion->user_id)
+                                <form action="{{ route('discussions.best-reply', ['discussion' => $discussion->slug, 'reply' => $reply->id ]) }}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-sm btn-primary">Mark as best</button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
+
                 </div>
                 <div class="card-body">
                     <span class="card-text">{!! $reply->content !!}</span>
