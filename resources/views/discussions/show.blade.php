@@ -14,6 +14,33 @@
         </div>
     </div>
 
+    {{-- Show replies --}}
+    <div class="container">
+        @foreach($discussion->replies()->paginate(3) as $indexKey => $reply)
+            <div class="card my-4 {{ $indexKey%2 ? "text-white bg-secondary" : "text-white bg-dark" }}">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <img src="{{ Gravatar::src($reply->owner->email) }}" alt="Avatar" width="40px" class="rounded-circle">
+                            <span class="ml-2 font-weight-bold">
+                                {{ $reply->owner->name }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-text">{!! $reply->content !!}</span>
+                </div>
+                <div class="card-footer">
+                    {{ $reply->created_at }}
+                </div>
+            </div>
+        @endforeach
+
+            {{ $discussion->replies()->paginate(3)->links() }}
+    </div>
+
+
     <div class="card my-3">
         <div class="card-header">
             Add a reply
@@ -24,7 +51,7 @@
 
                 @auth()
                     <div class="form-group">
-                        <input type="hidden" name="reply">
+                        <input id="reply" type="hidden" name="reply_content" value="{{ old('reply_content') }}">
                         <trix-editor input="reply"></trix-editor>
                     </div>
 

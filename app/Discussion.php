@@ -4,13 +4,18 @@ namespace LaravelForum;
 
 class Discussion extends Model
 {
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function getRouteKeyName()
+    public function replies()
     {
-        return 'slug';
+        return $this->hasMany(Reply::class);
     }
 }
